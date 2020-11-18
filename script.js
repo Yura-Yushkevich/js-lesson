@@ -1,26 +1,40 @@
 'use strict';
 
 
-const solder = {
-    health: 400,
-    armor: 100,
-    sayHello: function () {
-      console.log('Hello');  
-    },
-};
-
-const jonh = Object.create(solder);
+console.log(typeof(String(null)));
+console.log(typeof(String(4)));
 
 
 
-// const john = {
-//     health: 100,
-// };
+
+console.log(typeof(5+''));
+
+const num = 5;
+
+console.log('https://vk.com/catalog/' + num);
 
 
-// john.__proto__ = solder;
+const fontSize = 26 + 'px';
 
-// Object.setPrototypeOf(john,solder);
 
-jonh.sayHello();
+console.log(typeof(Number('4')));
 
+
+console.log(typeof(+ '4'));
+
+
+console.log(parseInt('15px', 10));
+
+let answer = +prompt('','');
+
+let switcher = null;
+
+if (switcher){
+  console.log('Working...');
+}
+
+let y = 1; let x = y = 2;
+
+console.log(+"NaN" );
+
+alert( "1"[0] );

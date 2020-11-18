@@ -19,7 +19,7 @@ const personalMovieDB = {
             let reitFilm = prompt('На сколько оцените его?','');
             
             if (lastFilm !='' && lastFilm !=null && reitFilm !='' && reitFilm !=null){
-                if(lastFilm.length < 50 && reitFilm <50){
+                if(lastFilm.length < 50 && reitFilm.length <50){
                     personalMovieDB.movies[lastFilm] = reitFilm;
                 } else{
                     lastFilm = prompt('Один из последних просмотренных фильмов?','');
@@ -70,9 +70,9 @@ const personalMovieDB = {
     }
 };
 
-// personalMovieDB.start();
-// personalMovieDB.detectPersonalLevel();
-// personalMovieDB.rememberMyFilms();
+personalMovieDB.start();
+personalMovieDB.detectPersonalLevel();
+personalMovieDB.rememberMyFilms();
 personalMovieDB.writeYourGenres();
-// personalMovieDB.toggleVisibleMyDB();
-// personalMovieDB.showMyDB(personalMovieDB.privat);
+personalMovieDB.toggleVisibleMyDB();
+personalMovieDB.showMyDB(personalMovieDB.privat);
