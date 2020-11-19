@@ -1,40 +1,38 @@
 'use strict';
 
+const   btns = document.querySelectorAll('button'),
+        wrapper = document.querySelector('.btn-block');
 
-console.log(typeof(String(null)));
-console.log(typeof(String(4)));
+// console.log(btns[0].classList.length);
 
-
-
-
-console.log(typeof(5+''));
-
-const num = 5;
-
-console.log('https://vk.com/catalog/' + num);
+// console.log(btns[0].classList.item(0));
+// console.log(btns[0].classList.add('red'));
+// console.log(btns[0].classList.remove('red'));
+// console.log(btns[0].classList.toggle('abc'));
+// console.log(btns[0].classList.toggle('abc'));
 
 
-const fontSize = 26 + 'px';
+// btns[0].addEventListener('click', (e)=>{
+//     e.preventDefault();
+//     if (!btns[1].classList.contains('red')){
+//         btns[1].classList.add('red');
+//     }else{
+//         btns[1].classList.remove('red'); 
+//     }   
+// });
 
 
-console.log(typeof(Number('4')));
+wrapper.addEventListener('click', (e)=>{
+    // console.dir(e.target);
+    if(e.target && e.target.tagName == 'BUTTON'){
+        console.log('Hello');    
+    }
+});
 
 
-console.log(typeof(+ '4'));
 
 
-console.log(parseInt('15px', 10));
 
-let answer = +prompt('','');
 
-let switcher = null;
 
-if (switcher){
-  console.log('Working...');
-}
 
-let y = 1; let x = y = 2;
-
-console.log(+"NaN" );
-
-alert( "1"[0] );
