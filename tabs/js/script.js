@@ -1,63 +1,31 @@
 'use strict';
 
+import calculator from './modules/calculator';
+import cards from './modules/cards';
+import fetchForm from './modules/fetchForm';
+import modal from './modules/modal';
+import slider from './modules/slider';
+import tabs from './modules/tabs';
+import timer from './modules/timer';
+import {openModal} from './modules/modal';
+
 window.addEventListener('DOMContentLoaded',()=>{
+    const modalTimerId = setTimeout(()=>openModal('.modal', modalTimerId), 50000);
 
-const   tabContents = document.querySelectorAll('.tabcontainer .tabcontent'),
-        tabs = document.querySelectorAll('.tabheader__items .tabheader__item'),
-        tabsParrent = document.querySelector('.tabheader__items');
-
-// tabs.forEach((item, i)=>{
-//     item.addEventListener('click', e=>{
-//         deleteActiveElement(tabContents);    
-//         deleteActiveElement(tabs);    
-//         tabContents[i].classList.add('active');
-//         item.classList.add('tabheader__item_active');
-//     });
-// });
-
-function hideTabContent() {
-    tabContents.forEach((item)=>{
-        item.classList.add('hide');
-        item.classList.remove('show','fade');
+    calculator();
+    cards();
+    fetchForm('form',modalTimerId);
+    modal('[data-modal]','.modal',modalTimerId);
+    slider({
+        container: '.offer__slider',
+        slide: '.offer__slide',
+        prevArrow: '.offer__slider-prev',
+        nextArrow: '.offer__slider-next',
+        currentCounter:'#current',
+        totalCounter:'#total',
+        wrapper:'.offer__slider-wrapper',
+        field:'.offer__slider-inner'
     });
-
-    tabs.forEach((item)=>{
-        item.classList.remove('tabheader__item_active');
-    });
-}
-
-function showTabContent(i = 0) {
-    tabContents[i].classList.add('show','fade');
-    tabContents[i].classList.remove('hide');
-    tabs[i].classList.add('tabheader__item_active');
-}
-
-
-
-// function deleteActiveElement(arr){
-//     arr.forEach((item, i )=>{
-//         if(item.classList.contains('active')){
-//             item.classList.remove('active');
-//         }else if(item.classList.contains('tabheader__item_active')){
-//             item.classList.remove('tabheader__item_active');         
-//         }
-//     });
-// }
-
-hideTabContent();
-showTabContent();
-
-tabsParrent.addEventListener('click',(e)=>{
-    const target = e.target;
-    if (target && target.matches('div.tabheader__item')) {
-        tabs.forEach((item,i)=>{
-            if(target == item){
-                hideTabContent();
-                showTabContent(i); 
-            }
-        });
-    }
+    tabs('.tabheader__item', '.tabcontainer .tabcontent', '.tabheader__items', 'tabheader__item_active');
+    timer('.timer', '2021-01-01');
 });
-
-});
-
