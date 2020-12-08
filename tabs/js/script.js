@@ -28,4 +28,5 @@ window.addEventListener('DOMContentLoaded',()=>{
     });
     tabs('.tabheader__item', '.tabcontainer .tabcontent', '.tabheader__items', 'tabheader__item_active');
     timer('.timer', '2021-01-01');
+
 });
