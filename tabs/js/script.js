@@ -1,5 +1,7 @@
 'use strict';
 
+import { tns } from "../node_modules/tiny-slider/src/tiny-slider";
+
 import calculator from './modules/calculator';
 import cards from './modules/cards';
 import fetchForm from './modules/fetchForm';
@@ -28,5 +30,15 @@ window.addEventListener('DOMContentLoaded',()=>{
     });
     tabs('.tabheader__item', '.tabcontainer .tabcontent', '.tabheader__items', 'tabheader__item_active');
     timer('.timer', '2021-01-01');
+
+
+
+    
+    tns({    
+        container: '.my-slider',
+        items: 1,
+        slideBy: 1,
+        autoplay: false,
+      });
 
 });

@@ -26,3 +26,9 @@
     opacity: .5;
     transition: opacity .6s ease;
 }
+
+.my-slider img{
+    width: 500px;
+    height: 300px;
+    display: block;
+}
