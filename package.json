@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/Yura-Yushkevich/js-lesson#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.9.1",
+    "@typescript-eslint/parser": "^4.9.1",
+    "eslint": "^7.15.0",
+    "eslint-plugin-react": "^7.21.5",
     "json-server": "^0.16.3",
     "webpack": "^5.10.0",
     "webpack-cli": "^4.2.0"
